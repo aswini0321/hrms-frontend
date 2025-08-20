@@ -540,7 +540,7 @@ const  secretariats= [
             <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Date of Joining</label>
+            <label>Date of Joining (First Recruitment) </label>
             <input type="date" name="doj" value={formData.doj} onChange={handleChange} required />
           </div>
 
