@@ -408,3 +408,32 @@ h2
     padding: 5px 10px;
   }
 }
+/* Phones - Improve logo & button size */
+@media screen and (max-width: 480px) {
+  /* Logo */
+  .logo img {
+    max-width: 130px;   /* a bit bigger */
+    height: auto;
+  }
+
+  /* Buttons */
+  button,
+  .btn {
+    font-size: 16px;    /* readable text */
+    padding: 10px 18px; /* finger-friendly tap area */
+    border-radius: 8px;
+  }
+
+  /* Headings */
+  h1, h2, h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  /* Paragraphs */
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
