@@ -290,6 +290,7 @@ const AForm = () => {
     employeeName: '',
     employeeId: '',
     designation: '',
+    probation:'',
     psVroGrade: '',
     dob: '',
     doj: '',
@@ -304,7 +305,8 @@ const AForm = () => {
     salaryDrawingPresent: '',
     salaryDrawingOffice: '',
     employmentType: '',
-    deputationLocation: ''
+    deputationLocation: '',
+    remarks:'',
   });
   
   const mandals = [
@@ -331,6 +333,22 @@ const AForm = () => {
   'VARARAMACHANDRAPURAM-R',
   'Y.RAMAVARAM-R'
 ];
+const designations = [
+  'Panchayat Secretary (Grade-I to V)',
+  'Panchayat Secretary Grade VI (Digital Assistant)',
+  'Welfare and Education Assistant',
+  'Village Agriculture Assistant',
+  'Horticulture Assistant',
+  'Sericulture Assistant',
+  'Veterinary Assistant',
+  'Fisheries Assistant',
+  'Engineering Assistant (Grade-II)',
+  'Village Revenue Officer',
+  'Village Surveyor Assistant (Grade-III)',
+  'Mahila Police & Ward Women & Weaker Sections Protection Secretary (Female)',
+  'ANM / Ward Health Secretary',
+  'Energy Assistant (JL Grade III)'
+];  
 const secretariats = [
   'A.G.KODERU (10491259)', 'A.SENIVARAM (10390513)', 'ADAKULA (10390472)', 
   'ADDATEEGALA1 (10490852)', 'ADDATEEGALA2 (10490868)', 'ADUGULAPUT (10390706)',
@@ -391,9 +409,10 @@ const secretariats = [
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // https://hrms-backend-36vx.onrender.com
 
   try {
-      const response = await axios.post('https://hrms-backend-36vx.onrender.com/category-a', formData);
+      const response = await axios.post('http://localhost:4000/category-a', formData);
       alert(response.data.message);
     } catch (err) {
        console.error(err);
@@ -452,17 +471,39 @@ const secretariats = [
         </div>
 
           {/* Designation */}
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Designation</label>
             <input type="text" name="designation" value={formData.designation} onChange={handleChange} required />
+          </div> */}
+           <div className="form-group">
+            <label htmlFor="designation">Designation</label>
+            <select
+              id="designation"
+              name="designation"
+              value={formData.designation}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select designation</option>
+              {designations.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+
+           <div className="form-group">
+            <label>Probation confirmation (Yes/No)</label>
+            <select name="probation" value={formData.probation} onChange={handleChange} required>
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
 
           {/* PS/VRO Grade */}
           <div className="form-group">
-            <label>PS/VRO Grade (I/II/III/IV/V/VI)</label>
+            <label>select Grade (I/II/III/IV/V/VI)</label>
             <select name="psVroGrade" value={formData.psVroGrade} onChange={handleChange} required>
               <option value="">Select Grade</option>
-              {['I','II','III','IV','V','VI'].map(g => <option key={g} value={g}>{g}</option>)}
+              {['I','II','III','IV','V','VI','NA'].map(g => <option key={g} value={g}>{g}</option>)}
             </select>
           </div>
 
@@ -548,13 +589,17 @@ const secretariats = [
               <option value="">Select</option>
               <option value="DEPUTATION">DEPUTATION</option>
               <option value="OD">OD</option>
-              <option value="REGULAR">REGULAR</option>
+              <option value="REGULAR">REGULAR-WORKING SAME SECRETARIAT</option>
             </select>
           </div>
 
           <div className="form-group">
             <label>If DEPUTATION/OD → Location</label>
             <input type="text" name="deputationLocation" value={formData.deputationLocation} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Remarks</label>
+            <input type="text" name="remarks" value={formData.remarks} onChange={handleChange} required />
           </div>
 
           <button type="submit">Submit</button>

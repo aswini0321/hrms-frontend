@@ -221,7 +221,7 @@ export default function Home() {
       )}
 
       {/* Categories first */}
-      <div className="categories-grid">
+      {/* <div className="categories-grid">
         {categories.map(({ category, title, description, icon }) => (
           <div
             key={category}
@@ -233,7 +233,26 @@ export default function Home() {
             <p className="category-description">{description}</p>
           </div>
         ))}
-      </div>
+      </div> */}
+      {/* Categories first */}
+<div className="categories-grid">
+  {categories.map(({ category, title, description, icon }) => (
+    <div key={category} className={`category-card category-${category}`}>
+      <div className="icon">{icon}</div>
+      <h2 className="category-title">{title}</h2>
+      <p className="category-description">{description}</p>
+
+      {/* New clickable button */}
+      <button
+        className="open-form-btn"
+        onClick={() => handleClick(category)}
+      >
+        📝 Click to Fill Form
+      </button>
+    </div>
+  ))}
+</div>
+
 
       {/* Image later */}
       <div className="info-extension">
@@ -247,7 +266,7 @@ export default function Home() {
 
       <footer className="footer">
         <p>
-          &copy; {new Date().getFullYear()} Gram Panchayat Property Portal. All rights
+          &copy; {new Date().getFullYear()} GSWS Admin Portal. All rights
           reserved.
         </p>
       </footer>

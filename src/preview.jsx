@@ -7,7 +7,7 @@ const Preview = () => {
   const navigate = useNavigate();
 
   const handleDownload = (category) => {
-    const url = `https://hrms-backend-36vx.onrender.com/export/${category}`;
+    const url = `http://localhost:4000/export/${category}`;
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', `category_${category.toUpperCase()}_data.xlsx`);
