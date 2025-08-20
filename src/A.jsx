@@ -409,10 +409,10 @@ const secretariats = [
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // https://hrms-backend-36vx.onrender.com
+    
 
   try {
-      const response = await axios.post('http://localhost:4000/category-a', formData);
+      const response = await axios.post('https://hrms-backend-36vx.onrender.com/category-a', formData);
       alert(response.data.message);
     } catch (err) {
        console.error(err);
