@@ -217,14 +217,14 @@ form .btn {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: #007bff;
+  background: #53a63e;
   color: white;
   cursor: pointer;
 }
 
 form button:hover,
 form .btn:hover {
-  background: #0056b3;
+  background: #113f03;
 }
 
 /* Logos + images responsive */
@@ -265,3 +265,18 @@ img,
     text-align: center;      /* align neatly */
   }
 }
+
+/* Make all form inputs grey */
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 400px;  /* optional, so it won’t stretch too wide */
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: lightgrey;  /* uniform grey for all */
+  box-sizing: border-box;
+}
+
