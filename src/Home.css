@@ -310,3 +310,101 @@ h2
   }
 }
 
+/* 🔹 Your original CSS stays same (I didn’t change it) */
+
+/* ✅ Extra Responsiveness Fixes */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .category-card {
+    width: 90%; /* shrink card */
+    font-size: 1rem;
+  }
+
+  .info-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .gp-logo-container {
+    flex-direction: column;
+    gap: 20px; /* instead of 500px */
+  }
+
+  .main-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .categories-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .category-card {
+    width: 100% !important;
+    padding: 1rem;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+
+  .category-title {
+    font-size: 1.4rem;
+  }
+
+  .category-description {
+    font-size: 1rem;
+  }
+
+  .open-form-btn,
+  .preview-button,
+  .login-button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    width: auto;
+  }
+
+  .login-box {
+    width: 90%;
+  }
+
+  .info-image img {
+    width: 100% !important;
+    height: auto !important;
+    filter: blur(1px);
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 12px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .icon {
+    font-size: 3rem;
+  }
+  .open-form-btn,
+  .preview-button,
+  .login-button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
