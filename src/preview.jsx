@@ -37,7 +37,7 @@ const Preview = () => {
       </div>
 
       {/* Heading */}
-      <h1 className="preview-heading">Download Functionaries Data</h1>
+      <h1 className="preview-heading">Download Inspection Data</h1>
       <p className="preview-description">
         Welcome Admin....! Just a click away to download data!
       </p>
@@ -47,8 +47,9 @@ const Preview = () => {
         <div className="preview-card" onClick={() => handleDownload('a')}>
           <div className="card-content">
             <div className="icon">🏠</div>
-            <h2>HRMS</h2>
-            <p>Download HRMS functionaries data</p>
+            <h2>GVWV & VSWS</h2>
+            <p>Swarna Grama Swarna Wardu</p>
+            <p>click to Download</p>
           </div>
         </div>
 
