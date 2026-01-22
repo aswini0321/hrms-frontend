@@ -7,17 +7,14 @@ const Preview = () => {
   const navigate = useNavigate();
 
   const handleDownload = (category) => {
-    const url = `https://hrms-backend-36vx.onrender.com/export/${category}`;
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `category_${category.toUpperCase()}_data.xlsx`);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+  const url = `https://hrms-backend-36vx.onrender.com/export/${category}`;
 
-    setSuccessMessage(`✅ Category ${category.toUpperCase()} data downloaded successfully!`);
-    setTimeout(() => setSuccessMessage(''), 3000);
-  };
+  // open backend export URL directly
+  window.open(url, "_blank");
+
+  setSuccessMessage(`✅ Category ${category.toUpperCase()} data downloaded successfully!`);
+  setTimeout(() => setSuccessMessage(''), 3000);
+};
 
   const handleBack = () => {
     navigate("/");
@@ -76,38 +73,3 @@ const Preview = () => {
 };
 
 export default Preview;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
