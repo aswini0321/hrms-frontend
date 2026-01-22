@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './preview.css';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +50,6 @@ const Preview = () => {
             <div className="icon">🏠</div>
             <h2>GVWV & VSWS</h2>
             <p>Swarna Grama Swarna Wardu</p>
-            <p>click to Download</p>
           </div>
         </div>
 
@@ -74,3 +74,49 @@ const Preview = () => {
 };
 
 export default Preview;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
